@@ -25,14 +25,17 @@ const matchRegex = (text, pattern, flags) => {
 regexPattern.addEventListener("input", ()=> {
     return regexPattern.value;
 });
+console.log("gi".includes("g"));
 
 testButton.addEventListener("click", ()=> {
     const regex = regexPattern.value;
     const testString = stringToTest.textContent;
     const result = matchRegex(testString, regex, getFlags());
-    const newString = testString.replaceAll(result, `<span class="highlight">${result}</span>`);
-    console.log(newString);
-    testResult.innerHTML = newString;
+    if (getFlags().includes("g")) {
+        testResult.innerHTML = testString.replaceAll(result, `<span class="highlight">${result}</span>`);
+    } else {
+        testResult.innerHTML = testString.replace(result, `<span class="highlight">${result}</span>`);
+    }
 });
 
 
