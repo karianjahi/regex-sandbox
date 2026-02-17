@@ -12,32 +12,40 @@ const getFlags = () => {
     if (!caseInsensitiveFlag.checked && globalFlag.checked) return "g";
 };
 
-const matchRegex = (text, pattern, flags) => {
-    const regex = new RegExp(pattern, flags);
-    const resultArray = text.match(regex);
-    console.log(resultArray);
-    if (resultArray) return resultArray[0];
-    return "";
+const getUniqueItems = (array) => {
+    return [...new Set(array)];
 };
 
-// console.log(matchRegex("I am awake", "Am", "i"));
+
+
+const matchRegex = (text, pattern, flags) => {
+    if (pattern === "\d+") pattern = "\\d+";
+    const regex = new RegExp(pattern, flags);
+    const resultArray = getUniqueItems(text.match(regex));
+    if (resultArray.length === 0) return "no match";
+    if (flags.includes("g")) {
+        for (let item of resultArray) {
+           text = text.replaceAll(item, `<span class="highlight">${item}</span>`);
+        }
+        console.log(text);
+        return text
+    } 
+    console.log(text.replace(resultArray[0], `<span class="highlight">${resultArray[0]}</span>`) );
+    return text.replace(resultArray[0], `<span class="highlight">${resultArray[0]}</span>`);
+};
+
+// console.log(matchRegex("Gu1n34 P1g5", "\d+", "gi"))
+
+// console.log(matchRegex("I am awake 798 hasemiCha", "\d+", "gi"));
 
 regexPattern.addEventListener("input", ()=> {
     return regexPattern.value;
 });
-console.log("gi".includes("g"));
 
 testButton.addEventListener("click", ()=> {
     const regex = regexPattern.value;
     const testString = stringToTest.textContent;
-    const result = matchRegex(testString, regex, getFlags());
-    if (getFlags().includes("g")) {
-        testResult.innerHTML = testString.replaceAll(result, `<span class="highlight">${result}</span>`);
-    } else {
-        testResult.innerHTML = testString.replace(result, `<span class="highlight">${result}</span>`);
-    }
-
-    if (getFlags() == "") testResult.innerHTML = "no match";
+    testResult.innerHTML =  matchRegex(testString, regex, getFlags());
 });
 
 
