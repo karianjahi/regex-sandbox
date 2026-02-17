@@ -36,6 +36,8 @@ testButton.addEventListener("click", ()=> {
     } else {
         testResult.innerHTML = testString.replace(result, `<span class="highlight">${result}</span>`);
     }
+
+    if (getFlags() == "") testResult.innerHTML = "no match";
 });
 
 
