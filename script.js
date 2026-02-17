@@ -24,3 +24,6 @@ const replaceMatch = (text, pattern, flag) => {
     
 };
 
+testButton.addEventListener("click", () => {
+    testResult.innerHTML = replaceMatch(stringToTest.textContent, regexPattern.value, getFlags());
+});
