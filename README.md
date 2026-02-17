@@ -3,144 +3,102 @@
 
 
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
-![HTML](https://img.shields.io/badge/HTML-24%25-orange)
-![CSS](https://img.shields.io/badge/CSS-48%25-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-27%25-yellow)
+![HTML](https://img.shields.io/badge/HTML-Structure-orange)
+![CSS](https://img.shields.io/badge/CSS-Styling-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-Logic-yellow)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-An interactive **Regular Expression testing playground** built with
-vanilla JavaScript, HTML, and CSS.
+An interactive **Regular Expression testing playground** built with Vanilla JavaScript, HTML, and CSS.
 
-Test patterns in real time, apply flags, and visually highlight matches
-directly in the browser.
 
-------------------------------------------------------------------------
 
-## 🚀 Features
+---
 
--   🔎 Live regex pattern testing
--   🎯 Visual highlighting of matches
--   🔁 Global (`g`) flag support
--   🔤 Case-insensitive (`i`) flag support
--   ✨ Unique match filtering (no duplicate highlights)
--   🧼 Clean and minimal UI
--   ⚡ Zero dependencies (pure vanilla JS)
+## 🚀 Overview
 
-------------------------------------------------------------------------
+Regex Sandbox allows users to:
 
-## 🖥️ Demo Preview
+- Enter custom regular expression patterns
+- Select regex flags (`i`, `g`)
+- Test against editable text
+- Visually highlight matches
+- Dynamically render results inside the browser
 
-Regex pattern input with selectable flags:
+The project demonstrates DOM manipulation, dynamic RegExp construction, and safe content rendering.
 
-    /your-pattern/gi
+---
 
-Editable test string area and highlighted results displayed instantly.
+## ✨ Features
 
-------------------------------------------------------------------------
+- 🔎 Dynamic RegExp creation
+- 🎯 Visual highlighting of matches
+- 🔁 Global flag (`g`) support
+- 🔤 Case-insensitive flag (`i`) support
+- 🖊 Editable test string (`contenteditable`)
+- 🎨 Clean dark-themed UI with CSS variables
+- ⚡ Zero dependencies (Pure Vanilla JS)
 
-## 📂 Project Structure
-
-    regex-sandbox/
-    │
-    ├── index.html     # Application structure
-    ├── styles.css     # UI styling & highlight styles
-    ├── script.js      # Regex engine logic
-    ├── LICENSE
-    └── README.md
-
-------------------------------------------------------------------------
+---
 
 ## 🧠 How It Works
 
-### 1️⃣ Pattern Input
+1. User inputs a pattern.
+2. Selected flags are combined dynamically.
+3. A RegExp object is created at runtime.
+4. Matching substrings are wrapped in a styled span element.
+5. The result is rendered inside the result container.
 
-Users enter a regex pattern between forward slashes.
+The browser automatically replaces one or all matches depending on the selected flags.
 
-### 2️⃣ Flag Selection
+---
 
-Available flags:
+## 📂 Project Structure
 
-  Flag   Description
-  ------ -------------------------------
-  `i`    Case-insensitive matching
-  `g`    Global matching (all matches)
+regex-sandbox/
+├── index.html     # Application structure  
+├── script.js      # Regex logic & DOM events  
+├── styles.css     # UI styling & highlight styles  
+├── LICENSE  
+└── README.md  
 
-### 3️⃣ Matching Logic
+---
 
--   A dynamic `RegExp` object is created using the provided pattern and
-    flags.
--   Matches are extracted from the test string.
--   Duplicate matches are removed.
--   Matches are wrapped in a `<span>` with a highlight class.
--   If no match is found → displays `"no match"`.
+## 🛠 Technologies Used
 
-------------------------------------------------------------------------
+- HTML5
+- CSS3 (Flexbox + Custom Properties)
+- JavaScript (ES6)
+- DOM API
+- RegExp API
 
-## 🎨 UI Highlights
+---
 
--   Dark themed interface
--   Responsive layout
--   Editable content area (`contenteditable`)
--   Light green highlight styling for matches
+## 🎓 Concepts Demonstrated
 
-------------------------------------------------------------------------
+- Dynamic RegExp creation
+- Flag management logic
+- DOM selection & event handling
+- Template literal rendering
+- innerHTML vs textContent usage
+- Functional separation of concerns
 
-## 📦 Installation
-
-Clone the repository:
-
-``` bash
-git clone https://github.com/your-username/regex-sandbox.git
-cd regex-sandbox
-```
-
-Open `index.html` in your browser.
-
-No build step required.
-
-------------------------------------------------------------------------
-
-## 🛠️ Technologies Used
-
--   HTML5
--   CSS3 (Flexbox + Custom Properties)
--   JavaScript (ES6)
-
-------------------------------------------------------------------------
+---
 
 ## 🔮 Possible Improvements
 
--   Add more regex flags (`m`, `s`, `u`, `y`)
--   Add live auto-testing without button click
--   Add error handling for invalid patterns
--   Display match count
--   Add dark/light theme toggle
--   Add copy-to-clipboard feature
+- Add error handling for invalid regex patterns
+- Display match count
+- Support additional flags (`m`, `s`, `u`, `y`)
+- Real-time matching without button click
+- Copy result to clipboard
+- Add dark/light theme toggle
 
-------------------------------------------------------------------------
+---
 
 ## 📜 License
 
-This project is licensed under the MIT License.
+MIT License
 
-------------------------------------------------------------------------
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1.  Fork the project
-2.  Create your feature branch
-3.  Commit your changes
-4.  Push to the branch
-5.  Open a Pull Request
-
-------------------------------------------------------------------------
-
-## ⭐ If You Like This Project
-
-Give it a star on GitHub and share it with others!
-
-------------------------------------------------------------------------
+---
 
 Built with ❤️ using Vanilla JavaScript.
